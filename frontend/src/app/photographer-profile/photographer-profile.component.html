@@ -1,0 +1,131 @@
+<!-- Photographer profile page -->
+<div class="container-fluid" id="body">
+  <div class="row">
+
+    <div class="col-sm-2">
+
+    </div>
+
+    <div class="col-sm-8">
+      <div id="profile-card" class="card">
+        <div *ngIf="photographer">
+
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-6" style="padding-bottom: 5px;">
+                <img src="{{photographer.image}}" class="card-img-top" alt="...">
+              </div>
+              <div class="col-sm-1.5"></div>
+              <div class="col-sm-2.5">
+                <button class="btn btn-primary" (click)="showDialog()" id="photographer-gallery">View All Photos</button>
+              </div>
+              <div class="col-sm-2" style="padding-right: 0px;">
+                <a href="booking/{{photographer.id}}"><button class="btn btn-primary" id="book-now">Book
+                    Now</button></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <h4 class="card-title">{{photographer.name}}'s Profile</h4>
+              </div>
+              <div class="col-sm-6">
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group" style="margin-bottom: 3px;">
+                  <label for="userBio">Biography</label>
+                  <textarea class="form-control" id="userBio" rows="5">{{photographer.bio}}</textarea>
+                </div>
+
+              </div>
+              <div class="col-sm-6">
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="photogEmail">Email: </span>
+                  </div>
+                  <label class="form-control" aria-label="email"
+                    aria-describedby="photogEmail">{{photographer.email}}</label>
+                </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="photogPhone">Phone: </span>
+                  </div>
+                  <label class="form-control" aria-label="phone"
+                    aria-describedby="photogPhone">{{photographer.phone}}</label>
+                </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="photogLocation">Location: </span>
+                  </div>
+                  <label class="form-control" aria-label="location"
+                    aria-describedby="photogLocation">{{photographer.location}}</label>
+                </div>
+
+
+              </div>
+            </div>
+            <div class="profile-calender row">
+              <div class="col-md-6 text-center calender-table">
+                <h4>Schedule</h4>
+                <table>
+                  <tr>
+                    <th>Date</th>
+                    <th>From</th>
+                    <th>To</th>
+                  </tr>
+                  <tr>
+                    <td>25/7/2019</td>
+                    <td>2:00 PM</td>
+                    <td>7:00 PM</td>
+                  </tr>
+                  <tr>
+                    <td>25/7/2019</td>
+                    <td>2:00 PM</td>
+                    <td>7:00 PM</td>
+                  </tr>
+                  <tr>
+                    <td>25/7/2019</td>
+                    <td>2:00 PM</td>
+                    <td>7:00 PM</td>
+                  </tr>
+                  <tr>
+                    <td>25/7/2019</td>
+                    <td>2:00 PM</td>
+                    <td>7:00 PM</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+          </div>
+          <div *ngIf="!photographer">
+            <div class="card-body">
+              <h4>Photographer not found</h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-2"></div>
+
+  </div>
+ <!-- <p-dialog [(visible)]="display" appendToBody=true modal="true" [style]="{width: '600px', height: '800px'}" closeOnEscape="false">
+      <p-header>
+          Photos
+      </p-header>
+      <div class="row">
+          <div class="col-md-4" i *ngFor="let item of imagesPaths" style="padding:3px;"><img src="../../../assets/pic.png" style="width:100%;"></div>
+      </div>
+      <p-footer>
+      </p-footer>
+  </p-dialog> -->
+</div>
+
+

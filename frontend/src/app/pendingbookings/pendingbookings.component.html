@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<title>Pending Bookings</title>
+<!-- author Lakshmi Narayana lk720991@dal.ca-->
+<!--  https://html.com/tables/ -->
+<div class="container">
+		<h2>Pending Bookings</h2>
+  <div class="card"> 
+	<table id="action" class="Pending Bookings">
+    				<thead>
+						<tr>
+							<!-- Table headings -->
+							<th style="width:40%" class="text-center">Photographer details</th>
+							<th style="width:20%" class="text-center">Event type</th>
+							<th style="width:20%" class="text-center">Event Date</th> 
+							<th style="width:20%" class="text-center">To be Paid</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let booking of final_booking_details">
+							<!-- for loop fetches date from database and displays in table body-->
+							<td class="text-center" data-th="Photographer details">
+								<div class="row">
+									<div class="col-sm-10">
+						<p>{{booking.photographerDetails.name}} </p>
+						<p>{{booking.photographerDetails.email}} </p>
+						<p>{{booking.photographerDetails.phone}} </p>
+						<hr>
+                      </div>
+                    </div>
+                  </td>
+                  <td data-th="Event type" class="text-center">{{booking.eventType}}</td>
+                  <td data-th="Event Date" class="text-center">{{booking.eventDate}}</td>
+                  <td data-th="Pay" class="text-center">${{booking.rate}}</td>
+             </tr>
+            </tbody>
+           </table>
+        </div>
+      </div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<title>Pending Requests</title>
+<!-- author Lakshmi Narayana lk720991@dal.ca -->
+<!--  https://html.com/tables/ -->
+<div class="container">
+  <h2>Pending Requests</h2>
+  <div class="card"> 
+	<table id="action" class="pendingrequests">
+    				<thead>
+						<tr>
+              <!-- Table headings -->
+							<th style="width:40%" class="text-center">Booking details</th>
+							<th style="width:15%" class="text-center">Event type</th>
+							<th style="width:15%" class="text-center">Event Date</th>
+							<th style="width:10%" class="text-center">Pay</th>
+							<th style="width:20%" class="text-center">Decision</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let booking of final_booking_details">
+              <!-- for loop fetches date from database and displays in table body-->
+							<td class="text-center" data-th="Booking details">
+                	<div class="row">
+                        <div class="col-sm-10">
+                        <h4 class="name">customer name</h4>
+                        <p>{{booking.address}}</p>
+                        <hr>
+                      </div>
+                    </div>
+                  </td>
+                  <td data-th="Event type" class="text-center">{{booking.eventType}}</td>
+                  <td data-th="Event Date" class="text-center">{{booking.eventDate}}</td>
+                  <td data-th="Pay" class="text-center">${{booking.rate}}</td>
+                  <td class="actions" data-th="Decision">
+                    <!-- on clicking accept and reject buttion pending status in db gets changed in database ddepending upon the button pressed-->
+                    <button type="submit" (click)="acceptedoffer(booking._id)" id="profile-btn" class="btn btn-primary" >Accept</button>
+                    <button type="reset" (click)="rejectedoffer(booking._id)" class="btn btn-warning" id="reset-btn">Reject</button>								
+                  </td>
+                </tr>
+          </tbody>
+          </table>
+</div>
+</div>

@@ -1,0 +1,98 @@
+<section class="form-pages full-height before-sign-up" *ngIf="!isBeforeSignup">
+    <div class="container body">
+      <div class="row sign-in-frm">
+        <div class="col-md-12">
+          <div class="form-div sign-up-frm">
+            <h2>Register</h2>
+            <form (ngSubmit)="signup(form.valid)" [formGroup]="form">
+              <div class="form-input">
+                <div class="input-wrap">
+                  <i class="fa fa-user"></i>
+                  <input type="text" Placeholder="Name" [(ngModel)]="formData.name" name="name"
+                  formControlName="name"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['name'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['name'].errors['required']">Name is required</span>
+                </div>
+              </div>
+              <div class="form-input">
+                <div class="input-wrap">
+                  <i class="fa fa-envelope"></i>
+                  <input type="text" Placeholder="Email" [(ngModel)]="formData.email" name="email"
+                  formControlName="email" />
+                </div>
+                <div class="error" *ngIf="!form.controls['email'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['email'].errors['required']">Email is required</span>
+                  <span *ngIf="form.controls['email'].errors['pattern']">Please enter valid email format</span>
+                </div>
+              </div>
+              <div class="form-input">
+                <div class="input-wrap">
+                  <i class="fa fa-phone"></i>
+                  <input type="text" Placeholder="Phone"  [(ngModel)]="formData.phone" name="phone"
+                  formControlName="phone"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['phone'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['phone'].errors['required']">Phone number is required</span>
+                  <span *ngIf="form.controls['phone'].errors['pattern']">Please enter valid phone number format</span>
+                </div>
+              </div>
+              <div class="form-input">
+                <div class="input-wrap">
+                  <i class="fa fa-key"></i>
+                  <input type="password" Placeholder="Password" [(ngModel)]="formData.password" name="password"
+                  formControlName="password"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['password'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['password'].errors['required']">Password is required</span>
+                  <span *ngIf="form.controls['password'].errors['minLength']">Password must be minimum 6 charactor</span>
+                </div>
+              </div>
+              <div class="form-input">
+                <div class="input-wrap">
+                  <i class="fa fa-key"></i>
+                  <input type="password" Placeholder="Re-enter password" [(ngModel)]="formData.cpassword" name="cpassword" formControlName="cpassword">
+                </div>
+                <div class="error" *ngIf="!form.controls['cpassword'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['cpassword'].errors['required']">Confirm password is required</span>
+                  <span *ngIf="form.controls['cpassword'].errors['mismatch']">
+                    Confirm password are mismatch
+                  </span>
+                </div>
+              </div>
+              <div class="d-flex terms-condition">
+                <div class="checkbox">
+                  <input id="check1" type="checkbox" name="check" value="check1">
+                  <label for="check1">Accept terms & conditions</label>
+                </div>	
+                <a href="/login">Login Now <i class="fa fa-caret-right"></i></a>
+              </div>
+              <div class="form-btm-btn">
+                <button type="submit">Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="form-pages full-height" *ngIf="isBeforeSignup">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-div">
+            <h2>Sign up for Photobook</h2>
+          </div>
+          <div class="profile-btn sign-up-btn">
+              <button class="orange-btn" (click)="change('user')">Sign Up as a User</button>
+            </div>
+          <div class="profile-btn sign-up-btn">
+            <button class="orange-btn" (click)="change('photographer')">Sign Up as a Photographer</button>
+          </div>
+          
+        </div>	
+      </div>
+    </div>
+  </section>
+  

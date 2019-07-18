@@ -1,0 +1,127 @@
+<div class="container-fluid" id="body">
+    <div class="row">  
+      <div class="col-sm-2"></div>  
+      <div class="col-sm-8" style="margin-top: 30px;">
+        <div id="booking-card" class="card" *ngIf="edit==false">
+            <h4 class="card-header">My Account</h4>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-12">
+                  <form>
+                    <div class="row">
+                      <div class="input-group col-sm-4">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="usersName">Name: </span>
+                        </div>
+                        <label class="form-control" aria-label="name"
+                          aria-describedby="usersName">Luke Andrews</label>
+                      </div>
+  
+                      <div class="input-group col-sm-4">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="username">Username: </span>
+                        </div>
+                        <label class="form-control" aria-label="rate" aria-describedby="username">lukeA1998</label>
+                      </div>
+  
+                      <div class="input-group col-sm-4">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="password">Password: </span>
+                        </div>
+                        <label class="form-control" aria-label="password"
+                          aria-describedby="password">********</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8"></div>
+                      <div class="col-md-4">
+                        &nbsp;&nbsp;<a href="#">Forgot password?</a>
+                      </div>
+                    </div>
+                    <div class="row" style="padding-top: 20px;">
+                      <div class="col-md-9"></div>
+                      <div class="col-md-3">
+                        <button (click)="editForm()" class="btn btn-warning">Edit Profile</button>
+                      </div>
+                    </div>
+                    <br>
+                  </form>
+                </div>
+  
+              </div>
+  
+              <div *ngIf="photographer.id && !photographer">
+                <div class="card">
+                  <div class="card-body">
+                    <h4>Photographer not found</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- if user is editing -->
+          <div id="booking-card" class="card" *ngIf="edit==true">
+              <h4 class="card-header">My Account</h4>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <form>
+                      <div class="row">
+                        <div class="input-group col-sm-4">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="usersName">Name: </span>
+                          </div>
+                          <input class="form-control" aria-label="name"
+                            aria-describedby="usersName" value="Luke Andrews">
+                        </div>
+    
+                        <div class="input-group col-sm-4">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="username">Username: </span>
+                          </div>
+                          <input class="form-control" aria-label="rate" aria-describedby="username" value="lukeA1998">
+                        </div>
+    
+                        <div class="input-group col-sm-4">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="password">Password: </span>
+                          </div>
+                          <input type="password" class="form-control" aria-label="password"
+                            aria-describedby="password" value="*********">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-8"></div>
+                        <div class="col-md-4">
+                          &nbsp;&nbsp;<a href="#">Forgot password?</a>
+                        </div>
+                      </div>
+                      <div class="row" style="padding-top: 20px;">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-3">
+                          <button (click)="editForm()" class="btn btn-warning">Enable editing</button>
+                        </div>
+                      </div>
+                      <br>
+                    </form>
+                  </div>
+    
+                </div>
+    
+                <div *ngIf="photographer.id && !photographer">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4>Photographer not found</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+        </div>
+  
+        <div class="col-sm-2"></div>
+  
+      </div>
+    </div>

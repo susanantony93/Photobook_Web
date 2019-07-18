@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<title>Search Photographer</title>
+  <!-- node author Lakshmi Narayana lk720991@dal.ca html designed by luke-->
+  <!-- this is a major screen of photobook which takes information from customer regarding event to store in MongoDb-->
+  <div class="container-fluid" id="body">
+  <div class="row">
+
+    <div class="col-sm-2">
+
+    </div>
+
+    <div class="col-sm-8">
+      <div id="booking-card" class="card">
+        <div *ngIf="photographer">
+          <h4 class="card-header">Booking Details</h4>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-12">
+                <form>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <h5>Photographer Details</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-group col-sm-4">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="photogName">Name: </span>
+                      </div>
+                      <label class="form-control" aria-label="name"
+                        aria-describedby="photogName">{{photographer.name}}</label> 
+                        <!-- photogName -->
+                    </div>
+
+                    <div class="input-group col-sm-4">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="photogRate">Rate: </span>
+                      </div>
+                      <!-- rate -->
+                      <label class="form-control" aria-label="rate" aria-describedby="photogRate">$80</label>
+                    </div>
+
+                    <div class="input-group col-sm-4">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="photogLocation">Area: </span>
+                      </div>
+                      <label class="form-control" aria-label="name"
+                        aria-describedby="photogLocation">{{photographer.location}}</label>
+                        <!-- photogLocation -->
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <h5>Event Details</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-sm-4">
+                      <label for="Address">Address</label>
+                      <input type="address" class="form-control" id="eventAddress" aria-describedby="eventAddress"
+                        placeholder="Enter event address" name="address" [(ngModel)]="eventAddress" #addr="ngModel"
+                        minlength=5 required>
+                      <div *ngIf="addr.invalid && (addr.dirty || addr.touched)" class="form-invalid">
+                        <div *ngIf="addr.errors.required">
+                          Address is required.
+                        </div>
+                        <div *ngIf="addr.errors.minlength">
+                          Address is too short.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group col-sm-4">
+                      <label for="eventType">Event Type</label>
+                      <input class="form-control" id="eventType" aria-describedby="eventType"
+                        placeholder="Enter event type" name="type" [(ngModel)]="eventType" #type="ngModel" minlength=3
+                        required>
+                      <div *ngIf="type.invalid && (type.dirty || type.touched)" class="form-invalid">
+                        <div *ngIf="type.errors.required">
+                          Event Type is required.
+                        </div>
+                        <div *ngIf="type.errors.minlength">
+                          Input is too short.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group col-sm-4">
+                      <label for="eventDate">Event Date</label>
+                      <input class="form-control" id="eventDate" aria-describedby="eventDate" placeholder="MM/DD/YYYY"
+                        name="date" [(ngModel)]="eventDate" #date="ngModel" pattern="^\d{1,2}\/\d{1,2}\/\d{4}$" required>
+                      <div *ngIf="date.invalid && (date.dirty || date.touched)" class="form-invalid">
+                        <div *ngIf="date.errors.required">
+                          Event Date is required.
+                        </div>
+                        <div *ngIf="date.errors.pattern">
+                          Date does not match requested format (MM/DD/YYYY).
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="row">
+                     <div class="col-sm-12">
+                       <!-- by clicking sendoffer onSendOffer() function gets called in  booking.component.ts by lakshmi narayana lk720991@dal.ca-->
+                       <a href="/findphotographer" class="btn btn-primary" (click)="onSendOffer()" id="submit-btn">Send Offer</a>
+                     </div>
+                     <!-- on clicking send offer we get a success message then it reverts back customer to  findphotographer page by lakshmi narayana lk720991@dal.ca-->
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+            <div *ngIf="photographer.id && !photographer">
+              <div class="card">
+                <div class="card-body">
+                  <h4>Photographer not found</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-2"></div>
+
+    </div>
+  </div>

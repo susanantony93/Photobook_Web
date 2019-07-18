@@ -1,0 +1,55 @@
+<section class="form-pages full-height">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-div">
+            <form (ngSubmit)="login(form.valid)" [formGroup]="form"> 
+              <div class="form-input">
+                <div class="input-wrap">
+                  <i class="fa fa-user"></i>
+                  <input type="text" Placeholder="Email" [(ngModel)]="formData.username" name="username"
+                  formControlName="username"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['username'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['username'].errors['required']">Email is required</span>
+                  <span *ngIf="form.controls['username'].errors['pattern']">Please enter valid email format</span>
+                </div>
+              </div>
+              <div class="form-input">
+                <div class="input-wrap">
+                  <i class="fa fa-key"></i>
+                  <input type="password" Placeholder="Password" [(ngModel)]="formData.password" name="password"
+                  formControlName="password"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['password'].valid && isFormSubmited">
+                    <span *ngIf="form.controls['password'].errors['required']">Password is required</span>
+                    <span *ngIf="form.controls['password'].errors['minlength']">Password must be more then 6 characters</span>
+                  </div>
+              </div>
+              <div class="d-flex terms-condition">
+                <div class="checkbox">
+                  <input id="check1" type="checkbox" name="check" value="check1">
+                  <label for="check1">Remember me</label>
+                </div>	
+                <a href="">Forgot Password <i class="fa fa-caret-right"></i></a>
+              </div>
+              <div class="form-btm-btn">
+                <button type="submit">Login</button>
+                <!-- <a class="orange-btn sign-up-button" [routerLink]="['/sign-up']">Don't Have Account? Create New</a> -->
+              </div>
+              
+            </form>
+            <div class="profile-btnp sign-up-btn">
+                <a class="orange-btn sign-up-button" [routerLink]="['/sign-up']">Don't have an account? Create new</a>
+                <!-- <button class="orange-btn sign-up-button">Sign up</button> -->
+              </div>
+              <div class="login-other d-flex">
+                <a href="/dashboard"><img src="../../../assets/google-login.png" alt="google-login" /></a>
+                <a href="/photogdash"><img src="../../../assets/facebook-login.png" alt="facebook-login" /></a>
+              </div>
+          </div>
+          
+        </div>	    
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<title>upcomingevents</title>
+<!-- author Lakshmi Narayana lk720991@dal.ca-->
+<!--  https://html.com/tables/ -->
+<div class="container">
+    <h2>Upcoming Events </h2>
+  <div class="card"> 
+	<table id="action" class="upcomingevents">
+    				<thead>
+						<tr>
+              <!-- Table headings -->
+							<th style="width:40%" class="text-center">Booking details</th>
+							<th style="width:20%" class="text-center">Event type</th>
+							<th style="width:20%" class="text-center" >Event Date</th>
+              <th style="width:20%" class="text-center">Pay</th>	
+        		</tr >
+					</thead>
+					<tbody>
+						<tr *ngFor="let booking of final_booking_details">
+              <!-- for loop fetches date from database and displays in table body-->
+							<td class="text-center" data-th="Booking details">
+                	<div class="row">
+                        <div class="col-sm-10">
+                        <h4 class="name">Customer Name</h4>
+                        <p>{{booking.address}}</p>
+                        <hr>
+                      </div>
+                    </div>
+                  </td>
+                  <td data-th="Event type" class="text-center">{{booking.eventType}}</td>
+                  <td data-th="Event Date" class="text-center">{{booking.eventDate}}</td>
+                  <td data-th="Pay" class="text-center">${{booking.rate}}</td>
+             </tr>
+            </tbody>
+           </table>
+        </div>
+      </div>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+  <title>Photobook</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  
+  
+  
+</head>
+<div class="page-container">
+<nav class="navbar sticky-top navbar-expand-lg my-nav">
+  <div class="container-fluid zero-padding nav-div">
+    <div class="row">
+      <div class="col-sm-3">
+        <a class="navbar-brand" href="../">Photobook</a>
+      </div>
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-1.5 zeropadding">
+        <a class="nav-link btn btn-primary" id="nav-btn" href="/sign-up">Sign Up</a>
+      </div>
+      <div class="col-sm-1">
+        <a class="nav-link btn btn-primary" id="nav-btn2" href="/login">Login</a>
+      </div>
+      <div class="col-sm-2 float-right">
+        <input class="form-control height-fix" type="search" placeholder="Search" aria-label="Search">
+      </div>
+      &nbsp;
+      <div class="col-sm-0.5 float-right">
+        <button class="btn btn-primary height-fix" id="nav-btn3" type="button">Search</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<div class="container-fluid text-sm-center zero-padding">
+    <footer id="page-footer">
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>Links</h3>
+        </div>
+        <div class="col-sm-4">
+          <h3>Social</h3>
+        </div>
+        <div class="col-sm-4">
+          <h3>Policies and FAQ</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <p>Nam a finibus neque. Quisque eleifend.</p>
+        </div>
+        <div class="col-sm-4">
+          <p>Vivamus ut ultrices orci. Nunc cursus.</p>
+        </div>
+        <div class="col-sm-4">
+          <p>Etiam a nibh in nisi dictum.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <p>Proin quis turpis non dolor lacinia.</p>
+        </div>
+        <div class="col-sm-4">
+          <p>Etiam a nibh in nisi dictum.</p>
+        </div>
+        <div class="col-sm-4">
+          <p>Duis dictum orci eu ligula fermentum.</p>
+        </div>
+      </div>
+      <div class="row" style="padding: 10px 0px 10px 30px;">
+        <p>&copy; Photobook 2019 Luke, Lakshmi, Mohit, Susan</p>
+      </div>
+  </footer>
+  </div>
+</div>

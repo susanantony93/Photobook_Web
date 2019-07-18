@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<title>Future Events </title>
+<!-- author Lakshmi Narayana lk720991@dal.ca-->
+<!-- https://html.com/tables/ -->
+<div class="container">
+	<h2>Future Events </h2>
+  <div class="card"> 
+	<table class="futurebookings">
+    				<thead>
+						<tr>
+							<!-- Table headings -->
+							<th style="width:40%" class="text-center">Photographer details</th>
+							<th style="width:15%" class="text-center">Event type</th>
+							<th style="width:15%" class="text-center" >Event Date</th>
+							<th style="width:15%" class="text-center">payable amount</th>
+							<th style="width:15%" class="text-center">Payment</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let booking of final_booking_details">
+							<!-- for loop fetches date from database and displays in table body-->
+						<td class="text-center" data-th="Photographer details">
+							<div class="row">
+								<div class="col-sm-10">
+									<p>{{booking.photographerDetails.name}} </p>
+									<p>{{booking.photographerDetails.email}} </p>
+									<p>{{booking.photographerDetails.phone}} </p>
+									<hr>
+								</div>
+							</div>
+						</td>
+						<td class="text-center" data-th="Event type">{{booking.eventType}}</td>
+						<td class="text-center" data-th="Event Date">{{booking.eventDate}}</td>
+						<td class="text-center" data-th="Pay">${{booking.rate}}</td>
+                 		<td  class="actions" data-th="Payment">
+							 <!-- on clicking payment it reaches payment feature developed by susan -->
+						<a  href="/payment" style="margin-left: 18%" id="profile-btn" class="btn btn-primary">payment</a>								
+						</td>
+					</tr>
+		  </tbody>
+          </table>
+</div>
+</div>

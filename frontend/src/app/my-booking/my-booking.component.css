@@ -1,0 +1,34 @@
+hr {
+    border-top: 1px solid #B5AEAE;
+    margin-top: 30px;
+}
+
+a.link-card {
+  color: inherit;
+}
+
+.card:hover {
+    border: 1px solid #FF715B;
+}
+
+.card-holder {
+  border-radius: 3px;
+  height:100%;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  
+  margin-bottom: 50px;
+  background-color: #4C5454;
+}
+.card {
+    margin-left: 40px;
+    width: 132px;
+    height: 333px;
+}
+
+.body {
+  padding-top: 10px;
+  height: 100%;
+  width: 100%;
+}

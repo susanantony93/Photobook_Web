@@ -1,0 +1,32 @@
+.card-header {
+    width: 100%;
+}
+.form-invalid {
+    color: #FF715B;
+    
+}
+#payment-card {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#reset-btn {
+    background-color: #FF715B;
+    border-color: #FF715B;
+    color: white;
+    margin: auto;
+    margin-right: 0px;
+    display: block;
+}
+#reset-btn:hover {
+    color: white;
+    
+}
+
+#profile-btn {
+    margin: auto;    
+    margin-left: 5px;
+    display: block;
+}

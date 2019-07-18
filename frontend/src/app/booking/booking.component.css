@@ -1,0 +1,15 @@
+#booking-card {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.form-invalid {
+    color: #FF715B;
+    
+}
+#submit-btn {
+    float: right;
+    background-color: #1EA896;
+    border-color: #1EA896;
+}
