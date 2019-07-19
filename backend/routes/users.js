@@ -7,7 +7,7 @@ var config = require('./../config');
 
 var User = require('./../models/users');
 
-router.post('/', async (req,res)=>{ 
+router.post('/user/sign-up', async (req,res)=>{ 
     console.log('\n req body : ', req.body)
   var schema = {
   'name': {

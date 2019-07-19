@@ -4,7 +4,11 @@
 let host = location.host.split(":")[0];
 export const environment = {
   production: false,
-  apiUrl:'http://'+host+':3000/',
+ apiUrl:'http://'+host+':3000/',
+
+  //Hosting port
+
+ //apiUrl:'http://'+host+':28028/'
 };
 
 /*
