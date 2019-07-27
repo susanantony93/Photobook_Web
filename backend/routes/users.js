@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 
 var config = require('./../config');
@@ -78,6 +78,38 @@ if (!errors) {
 router.get('/user', async (req,res)=>{
     res.json({'test':"riddhi"});
 });
+
+//route for logging in a user
+router.post('/login', async(req, res, next)=>{    
+        User.findOne(
+            { email: req.body.username, isDeleted: false },
+            function(err, user) {
+                if (err) throw err;
+                if (user) {
+
+                    // ---------- IF ENCRYPTION ------------------
+                    if (bcrypt.compare(req.body.password, user.password, function(err, isMatch) {
+                        if (err) throw err;
+                        res.json(user);
+                    }));
+
+                    // ----------- IF NO ENCRYPTION -------------------------
+                    /*var passwordCompare = user.password;
+                    if (passwordCompare === req.body.password) {
+                        res.json(user)
+                    } */                   
+                   /* else {
+                        res.status(404).send("Invalid login info.");
+                    }*/                   
+                } else {
+                    console.log(req.body);
+                    res.status(404).send("Invalid login info")
+                }
+            }
+        )
+    
+})
+
 
 module.exports = router;
  

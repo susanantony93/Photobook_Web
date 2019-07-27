@@ -5,9 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
-
-  constructor() { }
+export class DashboardComponent implements OnInit {  
+  userName = String
+  user
+  constructor() {     
+    this.user = JSON.parse(localStorage.getItem('currentUser'));    
+    this.userName = this.user.name;
+    
+  }
 
   ngOnInit() {
   }
