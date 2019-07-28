@@ -115,8 +115,11 @@ router.post('/updateUser', async(req, res, next)=>{
     
     
     User.findOneAndUpdate({"_id" : req.body._id},
-                {$set: { "name": req.body.name, "email": req.body.email }}, 
-                {returnOriginal: false});
+                {$set: { "name": req.body.usersName, "email": req.body.usersEmail }}, 
+                {new: true}, (err, user) => {
+                    if (err) throw err;
+                    res.json(user);
+                });
                 
     /*User.findOne(
         { email: req.body.username, isDeleted: false },
