@@ -110,6 +110,28 @@ router.post('/login', async(req, res, next)=>{
     
 })
 
+//route for updating a user
+router.post('/updateUser', async(req, res, next)=>{    
+    
+    
+    User.findOneAndUpdate({"_id" : req.body._id},
+                {$set: { "name": req.body.name, "email": req.body.email }}, 
+                {returnOriginal: false});
+                
+    /*User.findOne(
+        { email: req.body.username, isDeleted: false },
+        function(err, user) {
+            if (err) throw err;
+            if (user) {
+  
+            } else {
+                console.log(req.body);
+                res.status(404).send("Invalid login info")
+            }
+        }
+    )*/
+
+})
 
 module.exports = router;
  

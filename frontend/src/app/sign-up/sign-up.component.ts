@@ -49,7 +49,7 @@ export class SignUpComponent implements OnInit {
         this.isFormSubmited = false;
         this.formData = {};
         localStorage.setItem('currentUser', JSON.stringify(res));
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/login']);
       }, (err) => {
         err = err.error;
         console.log('\n Err : ',err);
