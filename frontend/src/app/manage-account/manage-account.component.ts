@@ -17,7 +17,7 @@ export class ManageAccountComponent implements OnInit {
   user
   public form: FormGroup;
   public formData: any
-  public isFormSubmited = false;
+  
 
   constructor(public fb: FormBuilder, private router: Router, private all: AllServiceService) {
     this.formData = {};
@@ -35,14 +35,12 @@ export class ManageAccountComponent implements OnInit {
 
     //calls route for updating user
     this.formData._id = this.user._id;
-    this.all.post('updateUser', this.formData).subscribe((res) => {        //route for updatae
-      this.formData = {}; //reset form data        
+    this.all.post('updateUser', this.formData).subscribe((res) => {        //route for updatae              
       localStorage.setItem('currentUser', JSON.stringify(res)); //sets current user in localstorage       
       this.user = JSON.parse(localStorage.getItem('currentUser')); //updates current user for this page
       this.edit = false;
     }, (err) => {
-      //if there's an error, show the error
-      this.formData = {}; //reset form data        
+      //if there's an error, show the error      
       console.log(err.error); //log err in console
     });
 
