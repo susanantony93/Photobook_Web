@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PhotographerComponent } from './photographer/photographer.component';
@@ -27,6 +26,7 @@ import { MybookingsComponent } from './mybookings/mybookings.component';
 import { PastbookingsComponent } from './pastbookings/pastbookings.component';
 import { FuturebookingsComponent } from './futurebookings/futurebookings.component';
 import { PendingbookingsComponent } from './pendingbookings/pendingbookings.component';
+import { AuthGuard } from '../app/guards/auth-guard.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +60,7 @@ import { PendingbookingsComponent } from './pendingbookings/pendingbookings.comp
     HttpClientModule,
     NgBootstrapFormValidationModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

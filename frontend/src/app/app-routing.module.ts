@@ -20,30 +20,33 @@ import { MybookingsComponent } from './mybookings/mybookings.component';
 import { PastbookingsComponent } from './pastbookings/pastbookings.component';
 import { FuturebookingsComponent } from './futurebookings/futurebookings.component';
 import { PendingbookingsComponent } from './pendingbookings/pendingbookings.component';
-import { userInfo } from 'os';
+import { AuthGuard } from '../app/guards/auth-guard.service';
+
+
 
 const routes: Routes = [
   { path: "index", component: PhotographerComponent},
   { path: "", redirectTo: "index", pathMatch: "full"},
   { path: "sign-up", component: SignUpComponent },
-  { path: "booking/:id", component: BookingComponent },
-  { path: "profile/:id", component: PhotographerProfileComponent },
-  { path: "profile", redirectTo: "index", pathMatch: "full"},
-  { path: "dashboard", component: DashboardComponent },
-  { path: "MyBookings", component: MyBookingComponent },
-  { path: "findphotographer", component: FindphotographerComponent },
-  { path: "photographerprofile", component: PhotopdComponent},
-  { path: "payment", component: PaymentComponent},
+  { path: "booking/:id", component: BookingComponent, canActivate: [AuthGuard] },
+  { path: "profile/:id", component: PhotographerProfileComponent, canActivate: [AuthGuard] },
+  
+  { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: "MyBookings", component: MyBookingComponent, canActivate: [AuthGuard] },
+  { path: "findphotographer", component: FindphotographerComponent, canActivate: [AuthGuard] },
+  { path: "photographerprofile", component: PhotopdComponent, canActivate: [AuthGuard]},
+  { path: "payment", component: PaymentComponent, canActivate: [AuthGuard]},
   { path: "login", component: LoginComponent},
-  { path: "account", component: ManageAccountComponent },
-  { path: "photogdash", component: PhotogdashComponent },
-  { path: "pendingrequest", component:PendingrequestComponent},
-  { path: "upcomingevent", component:UpcomingeventComponent},
-  { path: "pastactivity", component:PastactivityComponent},
-  { path:"mybookings", component:MybookingsComponent},
-  { path:"pastbookings", component:PastbookingsComponent},
-  { path:"futurebookings", component:FuturebookingsComponent},
-  { path:"pendingbookings", component:PendingbookingsComponent}
+  { path: "account", component: ManageAccountComponent, canActivate: [AuthGuard]},
+  { path: "photogdash", component: PhotogdashComponent, canActivate: [AuthGuard] },
+  { path: "pendingrequest", component:PendingrequestComponent, canActivate: [AuthGuard]},
+  { path: "upcomingevent", component:UpcomingeventComponent, canActivate: [AuthGuard]},
+  { path: "pastactivity", component:PastactivityComponent, canActivate: [AuthGuard]},
+  { path:"mybookings", component:MybookingsComponent, canActivate: [AuthGuard]},
+  { path:"pastbookings", component:PastbookingsComponent, canActivate: [AuthGuard]},
+  { path:"futurebookings", component:FuturebookingsComponent, canActivate: [AuthGuard]},
+  { path:"pendingbookings", component:PendingbookingsComponent, canActivate: [AuthGuard]},
+  { path: "**", redirectTo: "index"}
 ]
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
