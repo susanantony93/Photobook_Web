@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { PhotographerComponent } from './photographer/photographer.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -20,6 +20,7 @@ import { MybookingsComponent } from './mybookings/mybookings.component';
 import { PastbookingsComponent } from './pastbookings/pastbookings.component';
 import { FuturebookingsComponent } from './futurebookings/futurebookings.component';
 import { PendingbookingsComponent } from './pendingbookings/pendingbookings.component';
+import { userInfo } from 'os';
 
 const routes: Routes = [
   { path: "index", component: PhotographerComponent},
