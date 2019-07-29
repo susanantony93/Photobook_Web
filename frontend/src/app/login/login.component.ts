@@ -44,7 +44,10 @@ export class LoginComponent implements OnInit {
         this.formData = {}; //reset form data   
         localStorage.setItem('isLoggedIn', "true");
         localStorage.setItem('currentUser', JSON.stringify(res)); //sets current user in localstorage       
-        this.router.navigate(['/dashboard']); //navigates user to their dashboard
+        this.router.navigate(['/dashboard']).then(() => {
+          window.location.reload();
+        }); //navigates user to their dashboard
+        
       }, (err) => {
         //if there's an error, show the error
         this.formData = {}; //reset form data

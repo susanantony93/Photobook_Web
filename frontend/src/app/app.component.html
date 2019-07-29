@@ -14,7 +14,7 @@
   
 </head>
 <div class="page-container">
-<nav class="navbar sticky-top navbar-expand-lg my-nav">
+<nav class="navbar sticky-top navbar-expand-lg my-nav" *ngIf="isLoggedIn==false" >
   <div class="container-fluid zero-padding nav-div">
     <div class="row">
       <div class="col-sm-3">
@@ -38,6 +38,27 @@
     </div>
   </div>
 </nav>
+<nav class="navbar sticky-top navbar-expand-lg my-nav" *ngIf="isLoggedIn==true" >
+    <div class="container-fluid zero-padding nav-div">
+      <div class="row">
+        <div class="col-sm-3">
+          <a class="navbar-brand" href="../dashboard">Photobook</a>
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-1.5 zeropadding">
+          <a class="nav-link btn btn-primary" id="nav-btn" (click)="logout()">Logout</a>
+        </div>
+        <div class="col-sm-2 float-right">
+          <input class="form-control height-fix" type="search" placeholder="Search" aria-label="Search">
+        </div>
+        &nbsp;
+        <div class="col-sm-0.5 float-right">
+          <button class="btn btn-primary height-fix" id="nav-btn3" type="button">Search</button>
+        </div>
+      </div>
+    </div>
+  </nav>  
 <router-outlet></router-outlet>
 <div class="container-fluid text-sm-center zero-padding">
     <footer id="page-footer">
