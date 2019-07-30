@@ -1,4 +1,4 @@
-<div class="container-fluid body" id="body">
+<div class="container-fluid body" id="body" *ngIf="user.user_role=='user'">
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
@@ -65,3 +65,71 @@
     <div class="col-md-1"></div>
   </div>  
 </div>
+
+<div class="container-fluid body" id="body" *ngIf="user.user_role=='photographer'">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h2>Photographer Hub</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10 card-holder">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="container-fluid zero-padding">
+              <a href="MyBookings" class="link-card">
+                <div class="card" style="width: 15rem; display: inline-block">
+                  <img class="card-img-top" src="../../assets/booking.jpg" style="height: 158px; width: 238px;"
+                  alt="My Bookings">
+                  <!--https://unsplash.com/photos/9n1USijYJZ4-->
+                  <div class="card-body">
+                    <h5 class="card-title">My Bookings</h5>
+                    <p class="card-text">View and manage your past and upcoming bookings. </p>
+                  </div>
+                </div>  
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="container-fluid zero-padding">
+              <a href="/photographerprofile" class="link-card">
+                <div class="card" style="width: 15rem; display: inline-block">
+                  <img class="card-img-top" src="../../assets/headshot1.jpg" style="height: 158px; width: 238px;"
+                  alt="photog-profile">
+                  <!--https://unsplash.com/photos/jkZs3Oi9pq0-->
+                  <div class="card-body">
+                    <h5 class="card-title">Manage Profile</h5>
+                    <p class="card-text">Allows you to modify the data on your front facing profile</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="container-fluid zero-padding">
+              <a href="account" class="link-card">
+                <div class="card" style="width: 15rem; display: inline-block">
+                  <img class="card-img-top" src="../../assets/myaccount.jpg" style="height: 158px; width: 238px;"
+                  alt="My Account">
+                  <!--https://unsplash.com/photos/2LowviVHZ-E-->
+                  <div class="card-body">
+                    <h5 class="card-title">Manage Account</h5>
+                    <p class="card-text">View and edit any details pertaining to your account with Photobook</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <hr/>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>  
+  </div>
