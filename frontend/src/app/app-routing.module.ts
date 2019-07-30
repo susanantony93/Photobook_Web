@@ -29,8 +29,7 @@ const routes: Routes = [
   { path: "", redirectTo: "index", pathMatch: "full"},
   { path: "sign-up", component: SignUpComponent },
   { path: "booking/:id", component: BookingComponent, canActivate: [AuthGuard] },
-  { path: "profile/:id", component: PhotographerProfileComponent, canActivate: [AuthGuard] },
-  
+  { path: "profile/:id", component: PhotographerProfileComponent, canActivate: [AuthGuard] },  
   { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
   { path: "MyBookings", component: MyBookingComponent, canActivate: [AuthGuard] },
   { path: "findphotographer", component: FindphotographerComponent, canActivate: [AuthGuard] },
