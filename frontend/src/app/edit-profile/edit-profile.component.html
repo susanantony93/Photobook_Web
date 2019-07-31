@@ -1,0 +1,250 @@
+<section class="form-pages footer-setup-update-user">
+  <div class="container">
+    <div class="content-top d-flex">
+      <h2>Hire  <span>Photographer</span></h2>
+    </div>
+    <div class="content-body white-box profile-form">
+      <form class="d-flex flex-wrap" (ngSubmit)="submit(form)" [formGroup]="form">
+        <div class="profile-form-r spiri-edit">
+          <ul class="d-flex flex-wrap">
+            <li>
+              <div class="form-input">
+                <label>Name</label>
+                <div class="input-wrap">
+                  <input type="text" Placeholder="Enter Name" [(ngModel)]="formData.name" name="name"
+                  formControlName="name"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['name'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['name'].errors['required']">Name is required</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="form-input">
+                <label>Country</label>
+                <div class="input-wrap">
+                  <input type="text" Placeholder="Enter Country" [(ngModel)]="formData.country" name="country"
+                  formControlName="country"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['country'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['country'].errors['required']">Country is required</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="d-flex flex-wrap">
+            <li>
+              <div class="form-input">
+                <label>Experience</label>
+                <div class="input-wrap">
+                  <input type="text" Placeholder="Enter Experience" [(ngModel)]="formData.experience" name="experience"
+                  formControlName="experience"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['experience'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['experience'].errors['required']">Experience is required</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="form-input">
+                <label>Expertise</label>
+                <div class="input-wrap">
+                  <input type="text" Placeholder="Enter Expertise" [(ngModel)]="formData.expertise" name="expertise"
+                  formControlName="expertise"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['expertise'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['expertise'].errors['required']">Expertise is required</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="form-input">
+                <label>Language Skill</label>
+                <div class="input-wrap">
+                  <input type="text" Placeholder="Enter Language Skills" [(ngModel)]="formData.language_skills" name="language_skills"
+                  formControlName="language_skills"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['language_skills'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['language_skills'].errors['required']">Language Skill is required</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="form-input">
+                <label>Phtography Equipment</label>
+                <div class="input-wrap">
+                  <input type="text" Placeholder="Enter Photography Equipments" [(ngModel)]="formData.photography_equipments" name="[photography_equipments]"
+                  formControlName="photography_equipments"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['photography_equipments'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['photography_equipments'].errors['required']">Photography Equipment is required</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="form-input">
+                <label>Personal Website</label>
+                <div class="input-wrap">
+                  <input type="text" Placeholder="Enter Personal Website" [(ngModel)]="formData.personal_website" name="personal_website"
+                  formControlName="personal_website"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['personal_website'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['personal_website'].errors['required']">Personal Website is required</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="form-input">
+                <label>Charge Per Hour</label>
+                <div class="input-wrap">
+                  <input type="text" Placeholder="Enter Charge Per Hour" [(ngModel)]="formData.charge_per_hour" name="charge_per_hour"
+                  formControlName="charge_per_hour"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['charge_per_hour'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['charge_per_hour'].errors['required']">Charge per hour is required</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="form-input">
+                <label>FaceBook URL</label>
+                <div class="input-wrap">
+                  <input type="text" Placeholder="Enter FacebookURL" [(ngModel)]="formData.fb_url" name="fb_url"
+                  formControlName="fb_url"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['fb_url'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['fb_url'].errors['required']">Charge per hour is required</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="form-input">
+                <label>Instagram URL</label>
+                <div class="input-wrap">
+                  <input type="text" Placeholder="Enter InstagramURL" [(ngModel)]="formData.insta_url" name="insta_url"
+                  formControlName="insta_url"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['insta_url'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['insta_url'].errors['required']">Charge per hour is required</span>
+                </div>
+              </div>
+            </li>
+            <!-- <li>
+              <div class="form-input">
+                <label>Email</label>
+                <div class="input-wrap">
+                  <input type="text" Placeholder="Enter Email" [(ngModel)]="formData.email" name="email"
+                  formControlName="email"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['email'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['email'].errors['required']">Charge per hour is required</span>
+                </div>
+              </div>
+            </li> -->
+            <li>
+              <div class="form-input">
+                <label>Twitter URL</label>
+                <div class="input-wrap">
+                  <input type="text" Placeholder="Enter Twitter URL" [(ngModel)]="formData.twitter_url" name="twitter_url"
+                  formControlName="twitter_url"/>
+                </div>
+                <div class="error" *ngIf="!form.controls['twitter_url'].valid && isFormSubmited">
+                  <span *ngIf="form.controls['twitter_url'].errors['required']">Charge per hour is required</span>
+                </div>
+              </div>
+            </li>
+            <!-- <li>
+              <div class="form-input">
+                <div class="upload-pic profile-pic-div">
+                  <input type='file' id='profileupload' (change)='uploadImage($event)' style="display:none" />
+                  <a href="javascript:" class="blue-btn" (click)='profileImageEdit()'>Update Profile</a>
+                </div>
+              </div>
+            </li> -->
+            <!-- <li>
+              <div class="form-input">
+                <label>Event Type</label>
+                <div class="input-wrap custom-select-wrap">
+                  <select >
+                    <option>Wedding Photographer</option>
+                    <option>Event Photographer</option>
+                    <option>Fashion Photographer</option>
+                    <option>Commercial Photographer</option>
+                  </select>
+                </div>
+              </div>
+            </li> -->
+          </ul>
+
+          <label>Requirement </label>
+<!--           
+          <ul class="d-flex flex-wrap requiremnt-wrap">
+            <li class="schedule-width">
+              <div class="form-input">
+                <div class="input-wrap">
+                  <input type="text" Placeholder="Enter Date" [(ngModel)]="requirenment[0].date" name="date"/>
+                </div>
+              </div>
+            </li>
+            <li class="schedule-width">
+              <div class="form-input">
+                <div class="input-wrap">
+                  <input type="text" Placeholder="From"  [(ngModel)]="requirenment[0].from" name="from"/>
+                </div>
+              </div>
+            </li>
+            <li class="schedule-width">
+              <div class="form-input">
+                <div class="input-wrap">
+                  <input type="text" Placeholder="To"  [(ngModel)]="requirenment[0].to" name="to"/>
+                </div>
+              </div>
+            </li>
+            <li class="schedule-width">
+              <a class="button orange-btn" (click)="addMore()">+</a>
+            </li>
+          </ul> -->
+          <ng-container formArrayName="requirement" *ngFor="let item of reqAvail.controls; let i = index">
+            <ng-container [formGroupName]="i">
+              <div>
+                <ul class="d-flex flex-wrap requiremnt-wrap">
+                    <li class="schedule-width">
+                      <div class="form-input">
+                        <div class="input-wrap">
+                          <input type="text" Placeholder="Enter Date" [(ngModel)]="formData.requirement[i].date" formControlName="date" name="date{{i}}"/>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="schedule-width">
+                      <div class="form-input">
+                        <div class="input-wrap">
+                          <input type="text" Placeholder="From"  [(ngModel)]="formData.requirement[i].from" formControlName="from" name="from{{i}"/>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="schedule-width">
+                      <div class="form-input">
+                        <div class="input-wrap">
+                          <input type="text" Placeholder="To" [(ngModel)]="formData.requirement[i].to" formControlName="to" name="to{{i}}"/>
+                        </div>
+                      </div>
+                    </li>
+                    <li *ngIf="i==0" class="schedule-width">
+                      <a class="button orange-btn" (click)="addMore()">+</a>
+                    </li>
+                    <li *ngIf="i!==0" class="schedule-width">
+                      <a class="button orange-btn" (click)="remove(i)">-</a>
+                    </li>
+                </ul>
+              </div>
+            </ng-container>
+          </ng-container>
+
+          <div class="profile-btn">
+            <button type="submit" class="blue-btn">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

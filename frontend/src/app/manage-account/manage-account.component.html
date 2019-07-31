@@ -27,13 +27,16 @@
                 </div>
 
                 <div class="row" style="padding-top: 20px;">
-                  <div class="col-md-9">
-                    <div class="col-md-6">
+                  <div class="col-md-6">
+                    <div class="col-md-12">
                       <a href="#">Forgot password?</a>
                     </div>
                   </div>
                   <div class="col-md-3">
-                    <button (click)="editForm()" class="btn btn-warning">Edit Profile</button>
+                    <button (click)="editForm()" class="btn btn-warning">Update</button>
+                  </div>
+                  <div class="col-md-3" *ngIf="isUser==false">
+                    <button (click)="editProfile()" class="btn btn-warning">Edit Profile</button>
                   </div>
                 </div>
                 <br>
@@ -57,7 +60,7 @@
                       <span class="input-group-text" id="usersName">Name: </span>
                     </div>
                     <input class="form-control" aria-label="name" aria-describedby="usersName" name="usersName"
-                    [(ngModel)]="formData.usersName" value={{user.name}}>
+                      [(ngModel)]="formData.usersName" value={{user.name}}>
                   </div>
 
                   <div class="input-group col-sm-6">
@@ -65,7 +68,7 @@
                       <span class="input-group-text" id="userEmail">Email: </span>
                     </div>
                     <input class="form-control" aria-label="userEmail" aria-describedby="userEmail" name="usersEmail"
-                    [(ngModel)]="formData.usersEmail" value={{user.email}}>
+                      [(ngModel)]="formData.usersEmail" value={{user.email}}>
                   </div>
                 </div>
 
@@ -75,10 +78,10 @@
                       <a href="#">Forgot password?</a>
                     </div>
                   </div>
-                  <div class="col-md-3">                    
-                      <button (click)="editForm()" class="btn btn-warning">Cancel</button>
-                      &nbsp;                
-                      <button (click)="saveChanges()" class="btn btn-info">Save</button>                
+                  <div class="col-md-3">
+                    <button (click)="editForm()" class="btn btn-warning">Cancel</button>
+                    &nbsp;
+                    <button (click)="saveChanges()" class="btn btn-info">Save</button>
                   </div>
                 </div>
                 <br>

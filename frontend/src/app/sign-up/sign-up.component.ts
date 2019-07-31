@@ -15,11 +15,11 @@ export class SignUpComponent implements OnInit {
   public formData: any
   public isFormSubmited = false;
   public user_role: String;
-  constructor(public fb: FormBuilder, private router:Router, private all:AllServiceService) {
+  constructor(public fb: FormBuilder, private router: Router, private all: AllServiceService) {
     this.formData = {};
     const pattern = new RegExp('^([A-Za-z0-9_\\-\\.])+\\@([A-Za-z0-9_\\-\\.])+\\.([A-Za-z]{2,5})$');
     this.form = this.fb.group({
-      'name': new FormControl('', Validators.compose([Validators.required,this.noWhitespaceValidator])),
+      'name': new FormControl('', Validators.compose([Validators.required, this.noWhitespaceValidator])),
       'email': new FormControl('', Validators.compose([Validators.required, Validators.pattern(pattern)])),
       'phone': new FormControl('', Validators.compose([Validators.required, Validators.pattern("[0-9]{10}")])),
       'password': new FormControl('', Validators.compose([Validators.required, Validators.minLength(6)])),
@@ -48,11 +48,17 @@ export class SignUpComponent implements OnInit {
       this.all.post('user/sign-up', this.formData).subscribe((res) => {
         this.isFormSubmited = false;
         this.formData = {};
-        localStorage.setItem('currentUser', JSON.stringify(res));
-        this.router.navigate(['/login']);
+        const user = res['data'];
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        localStorage.setItem('isLoggedIn', "true");
+        if (this.user_role === 'photographer') {
+          this.router.navigate(['/edit-profile']);
+        } else {
+          this.router.navigate(['/dashboard']);
+        }
       }, (err) => {
         err = err.error;
-        console.log('\n Err : ',err);
+        console.log('\n Err : ', err);
         // this.alerts.push({ type: 'danger', msg: err['message'], 'timeout': 5000 })
       });
     }
@@ -62,8 +68,9 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
   }
 
-  change(role: String){
+  change(role: String) {
     this.user_role = role;
+    console.log('\n user role : ', this.user_role);
     this.isBeforeSignup = false;
   }
 

@@ -16,7 +16,7 @@ import { FindphotographerComponent } from './findphotographer/findphotographer.c
 import { PhotopdComponent } from './photopd/photopd.component';
 import { PaymentComponent } from './payment/payment.component';
 import { LoginComponent } from './login/login.component';
-import {DialogModule} from 'primeng/dialog';
+import { DialogModule } from 'primeng/dialog';
 import { ManageAccountComponent } from './manage-account/manage-account.component';
 import { PhotogdashComponent } from './photogdash/photogdash.component';
 import { PendingrequestComponent } from './pendingrequest/pendingrequest.component';
@@ -27,6 +27,7 @@ import { PastbookingsComponent } from './pastbookings/pastbookings.component';
 import { FuturebookingsComponent } from './futurebookings/futurebookings.component';
 import { PendingbookingsComponent } from './pendingbookings/pendingbookings.component';
 import { AuthGuard } from '../app/guards/auth-guard.service';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,8 @@ import { AuthGuard } from '../app/guards/auth-guard.service';
     MybookingsComponent,
     PastbookingsComponent,
     FuturebookingsComponent,
-    PendingbookingsComponent, 
+    PendingbookingsComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,

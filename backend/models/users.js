@@ -15,8 +15,23 @@ var UserSchema = new Schema({
         type: String,
         required: true
     },
+    requirement: [{
+        date: { type: String },
+        from: { type: String },
+        to: { type: String }
+    }],
     profile_image: String,
     password: String,
+    country: String,
+    experience: String,
+    expertise: String,
+    language_skills: String,
+    photography_equipments: String,
+    personal_website: String,
+    charge_per_hour: String,
+    fb_url: String,
+    insta_url: String,
+    twitter_url: String,
     user_role: {
         type: String,
         enum: ["user", "photographer"]
@@ -29,8 +44,8 @@ var UserSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    modifiedAt: {type: Date, default: Date.now}
-}, {versionKey: false});
+    modifiedAt: { type: Date, default: Date.now }
+}, { versionKey: false });
 //password encription
 UserSchema.pre('save', function (next) {
     var user = this;
@@ -51,12 +66,6 @@ UserSchema.pre('save', function (next) {
         });
     });
 });
-UserSchema.methods.comparePassword = function(password, cb) {
-    bcrypt.compare(password, this.password, function(err, isMatch) {
-        if (err) return cb(err);
-        cb(null, isMatch);
-    });
-}
 // Compile model from schema
 var User = mongoose.model('users', UserSchema, 'users');
 module.exports = User;
