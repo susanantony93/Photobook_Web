@@ -49,6 +49,7 @@ app.use(function (req, res, next) {
 app.use(expressValidator());
 app.use(require('./routes/users'));
 app.use('/booking',booking);
+app.use(require('./routes/payment'))
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
