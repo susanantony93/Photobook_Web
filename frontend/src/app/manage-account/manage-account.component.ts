@@ -17,7 +17,7 @@ export class ManageAccountComponent implements OnInit {
   user
   public form: FormGroup;
   public formData: any;
-  public isUser = false;
+  
 
 
   constructor(public fb: FormBuilder, private router: Router, private all: AllServiceService) {
@@ -27,9 +27,6 @@ export class ManageAccountComponent implements OnInit {
       'usersEmail': new FormControl('', Validators.compose([Validators.required, Validators.minLength(6)])),
     });
     this.user = JSON.parse(localStorage.getItem('currentUser'));
-    if (this.user.user_role == "user"){
-      this.isUser = true;
-    }
     this.formData.usersEmail = this.user.email;
     this.formData.usersName = this.user.name;
   }
@@ -57,9 +54,5 @@ export class ManageAccountComponent implements OnInit {
       this.edit = false;
     }
 
-  }
-
-  editProfile() {
-    this.router.navigate(['/edit-profile']);
   }
 }
