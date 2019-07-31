@@ -16,29 +16,37 @@
                 <label class="form-control" aria-label="rate" aria-describedby="photogRate">$80</label>
               </div>
             </div>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="eventHours">Hours: </span>
-                  </div>
-                  <label class="form-control" aria-label="rate" aria-describedby="eventHours">3</label>
-                </div>
-              </div>
-              <div class="col-md-4">
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="photogRate">Total: </span>
-                    </div>
-                    <label class="form-control" aria-label="rate" aria-describedby="photogRate">$240</label>
-                  </div>
-                </div>
+
+
           </div>
           <form id="payment-form" method="POST" action="/payment">
+
+            
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label class="form-control-label" for="Hours">Hours</label>
+                <input type="name" class="form-control" name="Hours" [(ngModel)]="Hours" (keyup)="onKey($event)" #hourName="ngModel"
+                  pattern="[0-9]*" placeholder="Hours" required>
+                
+              </div>
+            </div>
+
+
+            <div class="col-md-4">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="photogRate">Total: </span>
+                </div>
+                <label class="form-control" aria-label="rate" aria-describedby="photogRate">{{total}} </label>
+              </div>
+            </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label class="form-control-label" for="cardName">Name on card</label>
                 <input type="name" class="form-control" name="cardName" [(ngModel)]="nameOnCard" #cardName="ngModel"
-                  pattern="[a-z][A-Z]$" placeholder="Name on Card" required>
+                  pattern="[a-zA-Z ]*" placeholder="Name on Card" required>
                 <div *ngIf="cardName.invalid && (cardName.dirty || cardName.touched)" class="form-invalid">
                   <div *ngIf="cardName.errors.required">
                     Name on card is required.
@@ -81,7 +89,7 @@
               <div class="form-group col-md-2">
                 <label class="form-control-label" for="cardCVC">CVC</label>
                 <input type="name" class="form-control" name="cardCVC" [(ngModel)]="CVC" #cardCVC="ngModel"
-                  pattern="/^[0-9]{3}$/" placeholder="CVC" required>
+                  pattern="[0-9]\d\d$" placeholder="CVC" required>
                 <div *ngIf="cardCVC.invalid && (cardCVC.dirty || cardCVC.touched)" class="form-invalid">
                   <div *ngIf="cardCVC.errors.required">
                     CVC is required.
@@ -94,7 +102,7 @@
               <div class="form-group col-md-4">
                 <label class="form-control-label" for="cardExpiry">Expiration Date</label>
                 <input type="name" class="form-control" name="cardExpiry" [(ngModel)]="cardExpiration"
-                  #cardExpiry="ngModel" pattern="/^[0-9]{3}$/" placeholder="DD-MM-YYYY" required>
+                  #cardExpiry="ngModel" placeholder="DD-MM-YYYY" required>
                 <div *ngIf="cardExpiry.invalid && (cardExpiry.dirty || cardExpiry.touched)" class="form-invalid">
                   <div *ngIf="cardExpiry.errors.required">
                     Expiration date is required.
@@ -107,8 +115,8 @@
             </div>
             <div class="form-row">
 
-              <button type="reset" class="btn btn-warning" id="reset-btn" value="Reset">Reset</button>
-              <button type="submit" value="Submit" id="profile-btn" class="btn btn-primary">Pay now</button>
+              <button type="reset" class="btn btn-warning" id="reset-btn"  value="Reset">Reset</button>
+              <button type="submit" value="Submit" id="profile-btn" (click)="onSubmit(photographerName,nameOnCard,numberCard,billingAddress,CVC,cardExpiration)" class="btn btn-primary">Pay now</button>
             </div>
 
           </form>
