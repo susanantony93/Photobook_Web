@@ -14,7 +14,7 @@ import { AllServiceService} from '../sevice/all-service.service';
 export class LoginComponent implements OnInit {
  
   //initializing variables
-  public errorVis = true;
+  public resError;
   public form: FormGroup;
   public formData: any
   public isFormSubmited = false; //
@@ -36,10 +36,10 @@ export class LoginComponent implements OnInit {
 
   //triggered when user submits login form
   login(isvalid) {
-
+    this.isFormSubmited = true;
     //ensuring form data is valid
     if (isvalid) {
-      //calls login route
+      //calls login route      
       this.all.post('login', this.formData).subscribe((res) => {        
         this.formData = {}; //reset form data   
         localStorage.setItem('isLoggedIn', "true");
@@ -50,13 +50,10 @@ export class LoginComponent implements OnInit {
         
       }, (err) => {
         //if there's an error, show the error
-        this.formData = {}; //reset form data
-        this.errorVis = false; //make error message visible  
+        
+        this.resError = err.error;
         console.log(err.error); //log err in console
       });
-    }
-    else {
-      this.errorVis = false;
     }
   }
 
