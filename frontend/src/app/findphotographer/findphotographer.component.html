@@ -2,95 +2,24 @@
 <title>Search Photographer</title>
   <!-- author Lakshmi Narayana lk720991@dal.ca-->
 <body>
+   <!--Search -->
   <div class="card-section1">
-    <input class="search" name="s" type="text" id="keywords" value="" placeholder="search by Photographer or location">
+    <input class="search" [(ngModel)]="searchstring" name="s" (keyup)=searchphotographer($event) type="text" id="keywords" value="" placeholder="search by Photographer or location">
   </div>
   <div class="container">
     <!-- //Bio: author: katie thurmes https://www.pinterest.it/pin/227361481172548973/ -->
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="card">
+    <div *ngFor="let photo of photographer;let inter = index">
+        <div *ngIf="photo.show" class="card">
           <img class="card-img-top" style="height:230px"
-            src="https://images.unsplash.com/photo-1521402582226-33e57788298d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+            [src]="photo.image"
             alt="Portfolio1">
           <div class="card-body">
-            <h5 class="card-title">Ben Moore</h5>
-            <h5 class="card-title1">Halifax</h5>
-            <p class="card-text">Bio: We take photos as a return ticket to a Moment otherwise gone.We promise attractive candid and random clicks</p>
+            <h5 class="card-title">{{photo.name}}</h5>
+            <h5 class="card-title1">{{photo.place}}</h5>
+            <p class="card-text">{{photo.bio}}</p>
             <a routerLink="/profile/1" id="profile-btn" class="btn btn-primary">View Profile</a>
           </div>
         </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="card">
-          <img class="card-img-top" style="height:230px"
-            src="https://mymodernmet.com/wp/wp-content/uploads/2017/11/best-instagram-photographer-thumbnail.jpg"
-            alt="Portfolio2">
-          <div class="card-body">
-            <h5 class="card-title">Jenna Webster</h5>
-            <h5 class="card-title1">Vancouver, BC</h5>
-            <p class="card-text"> Bio: We take photos as a return ticket to a Moment otherwise gone.We promise attractive candid and random clicks</p>
-            <a routerLink="/profile/2" id="profile-btn" class="btn btn-primary">View Profile</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="card">
-          <img class="card-img-top" style="height:230px"
-            src="https://static1.squarespace.com/static/55655cb9e4b0605469514b06/t/558f231ae4b01c6273ea266e/1435443997963/"
-            alt="Portfolio3">
-          <div class="card-body">
-            <h5 class="card-title">Taylor Sharpe</h5>
-            <h5 class="card-title1">Montreal, QC</h5>
-            <p class="card-text">Bio: We take photos as a return ticket to a Moment otherwise gone.We promise attractive candid and random clicks</p>
-            <a routerLink="/profile/3" id="profile-btn" class="btn btn-primary">View Profile</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div style="margin-top: 2%;margin-bottom: 2%" class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="card">
-          <img class="card-img-top" style="height:230px"
-            src="https://www.plannthat.com/wp-content/uploads/2017/10/brahmino.png" alt="Portfolio4">
-          <div class="card-body">
-            <h5 class="card-title">Brendan Tupper </h5>
-            <h5 class="card-title1"> Chicago, IL</h5>
-            <p class="card-text">Bio: We take photos as a return ticket to a Moment otherwise gone.We promise attractive candid and random clicks</p>
-            <a routerLink="/profile/4" id="profile-btn" class="btn btn-primary">View Profile</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="card">
-          <img class="card-img-top" style="height:230px"
-            src="https://davidyarrow.photography/wp-content/uploads/2017/07/Lion-Takes-remote-camera-0x1140-c-default.png"
-            alt="Portfolio5">
-          <div class="card-body">
-            <h5 class="card-title">Steve McCurry</h5>
-            <h5 class="card-title1">Toronto</h5>
-            <p class="card-text">Bio: We take photos as a return ticket to a Moment otherwise gone.We promise attractive candid and random clicks</p>
-            <a routerLink="/profile/5" id="profile-btn" class="btn btn-primary">View Profile</a>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="col-sm-4">
-        <div class="card">
-          <img class="card-img-top" style="height:230px"
-            src="http://www.storytrender.com/wp-content/uploads/2018/08/1_CATERS_BEST_DESTINATION_WEDDING_PHOTOS_02-1024x663.jpg"
-            alt="Portfolio6">
-          <div class="card-body">
-            <h5 class="card-title">Warner brothers</h5>
-            <h5 class="card-title1">California</h5>
-            <p class="card-text">Bio: We take photos as a return ticket to a Moment otherwise gone.We promise attractive candid and random clicks</p>
-            <a routerLink="/profile/6" id="profile-btn" class="btn btn-primary">View Profile</a>
-          </div>
-        </div>
-      </div>
-      <br>
     </div>
   </div>
 </body>
