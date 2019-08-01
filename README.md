@@ -14,6 +14,7 @@ Live URL :
 - Lakshmi Narayana Peniketi [B00819840]
 	- lk720991@dal.ca
 
+## Testing Details
 
 **Demo Account for test (You can create new account also)**
 
