@@ -3,6 +3,18 @@
 Live URL : 
 - [http://129.173.22.35:28027/index](http://129.173.22.35:28027/index)
 
+
+## Team Members
+- Luke Andrews [B00738530]
+	- Luke.Andrews@dal.ca 
+- Susan Antony [B00825029]
+	- ss822798@dal.ca
+- Mohit Kacha [B00804879]
+	- Mohit@dal.ca 
+- Lakshmi Narayana Peniketi [B00819840]
+	- lk720991@dal.ca
+
+
 **Demo Account for test (You can create new account also)**
 
 **User credential**
