@@ -3,6 +3,16 @@
 Live URL : 
 - [http://129.173.22.35:28027/index](http://129.173.22.35:28027/index)
 
+**Demo Account for test (You can create new account also)**
+
+**User credential**
+Id - hero@gmail.com
+password - 123456
+
+**Photographer credential** 
+Id - ben.jammin@gmail.com
+Passwoerd - 123123
+ 
 ## Intro
 - The photographer always seeking for an opportunity to showcase their work and get a client who can pay for their skills. We are providing a platform where the photographer can upload their best photos on the website and another user can view their profile. 
 - This platform is also for a normal user who is looking for a photographer for a specific event like a wedding, social event, professional photographer or fashion blogging. Customer/user can find photographer by location and by categories on this website. As per review, availability or chrages of the photographer, user can hire a photographer. Once user hires a photographer and completes the payment process, user and photographer both will receive a mail notification.
