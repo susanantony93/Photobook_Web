@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "async": "^3.1.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.13.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
